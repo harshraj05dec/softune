@@ -16,14 +16,14 @@ config({
   path: "./.env",
 });
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 export const instance = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
+  key_id: process.env.RAZORPAY_KEY_ID || "",
+  key_secret: process.env.RAZORPAY_KEY_SECRET ||  "",
 });
 
-const mongoURI = process.env.MONGO_URI || "4000";
+const mongoURI = process.env.MONGO_URI ;
 
 connectDB(mongoURI);
 
