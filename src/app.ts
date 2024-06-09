@@ -18,12 +18,8 @@ config({
 
 const port = process.env.PORT || 4000;
 
-const razorpayKeyId = process.env.RAZORPAY_KEY_ID;
-const razorpayKeySecret = process.env.RAZORPAY_KEY_SECRET;
-
-if (!razorpayKeyId || !razorpayKeySecret) {
-  throw new Error('Razorpay API keys are not provided');
-}
+const razorpayKeyId = process.env.RAZORPAY_KEY_ID!;
+const razorpayKeySecret = process.env.RAZORPAY_KEY_SECRET!;
 
 export const instance = new Razorpay({
   key_id: razorpayKeyId,
