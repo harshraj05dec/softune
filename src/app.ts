@@ -30,7 +30,7 @@ export const instance = new Razorpay({
   key_id: razorpayKeyId,
   key_secret: razorpayKeySecret,
 });
-const mongoURI = process.env.MONGO_URI ;
+const mongoURI = process.env.MONGO_URI || "" ;
 
 connectDB(mongoURI);
 
